@@ -6,18 +6,24 @@
   <title>Personal Outsides — Milton Secchi Naput</title>
   <link rel="stylesheet" href="shared.css"/>
   <style>
-    .project-title { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.5rem; }
-    .project-subtitle { font-family: 'Inconsolata', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; }
-    .project-meta { font-family: 'Inconsolata', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .description { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
-    .pull-quote { border-left: 2px solid var(--line); padding: 0.8rem 1.2rem; margin: 2rem 0; font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--muted); }
-    .screenings-list { list-style: none; }
-    .screenings-list li { padding: 0.45rem 0; font-size: 0.95rem; border-bottom: 1px solid var(--line); color: var(--muted); }
-    .screenings-list li:last-child { border-bottom: none; }
+    .project-title { font-size:clamp(1.8rem,4.5vw,2.8rem); font-weight:300; line-height:1.1; margin-bottom:0.5rem; letter-spacing:-0.03em; }
+    .project-subtitle { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.2rem; }
+    .project-meta { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .img-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
+    .img-grid img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; }
+    .description { font-size:1rem; line-height:1.75; margin-bottom:1.5rem; }
+    .pull-quote { border-left:2px solid var(--line); padding:0.8rem 1.2rem; margin:2rem 0; font-style:italic; font-size:0.95rem; line-height:1.7; color:var(--muted); }
+    .pdf-list { list-style:none; }
+    .pdf-list li { padding:0.5rem 0; border-bottom:1px solid var(--line); font-size:0.95rem; }
+    .pdf-list li:last-child { border-bottom:none; }
+    .pdf-list a { font-family:'Space Mono',monospace; font-size:0.72rem; display:inline-flex; align-items:center; gap:0.5rem; border-bottom:1px solid var(--line); transition:color 0.2s, border-color 0.2s; }
+    .pdf-list a:hover { color:var(--muted); border-bottom-color:var(--muted); }
+    .screenings-list { list-style:none; }
+    .screenings-list li { padding:0.45rem 0; font-size:0.95rem; border-bottom:1px solid var(--line); color:var(--muted); }
+    .screenings-list li:last-child { border-bottom:none; }
   </style>
 </head>
 <body class="lang-es">
-
   <nav class="site-nav" id="nav">
     <a href="index.html" class="nav-home">← Milton Secchi Naput</a>
     <div class="nav-right">
@@ -25,10 +31,8 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-
   <div class="container">
-
-    <div style="margin-bottom:3rem;" class="fade fade-1">
+    <div style="margin-bottom:1.5rem;" class="fade fade-1">
       <div class="project-title">Personal Outsides</div>
       <div class="project-subtitle" data-lang="es">Cines Experimentales Contemporáneos de los Sures Globales</div>
       <div class="project-subtitle" data-lang="en">Contemporary Experimental Cinemas from the Global Souths</div>
@@ -39,7 +43,12 @@
       </div>
     </div>
 
-    <section style="margin-bottom:2.5rem;" class="fade fade-2">
+    <div class="img-grid fade fade-2">
+      <img src="Personal_outsides_1.png" alt="Personal Outsides Vol. I">
+      <img src="Personal_outsides_2.png" alt="Personal Outsides Vol. II">
+    </div>
+
+    <section style="margin-bottom:2.5rem;" class="fade fade-3">
       <div class="section-label" data-lang="es">Descripción</div>
       <div class="section-label" data-lang="en">Description</div>
       <p class="description" data-lang="es">Serie de proyecciones de obras de video contemporáneas, acompañadas de entrevistas con algunos de sus realizadores. El programa incluyó también una pequeña publicación. Cortometrajes de Sindhu Thirumalaisamy, Tulapop Saenjaroen, Marwa Arsanios y Paola Buontempo fueron presentados en el Union Cinema de Milwaukee, EEUU. Las entrevistas fueron publicadas en la zine producida por colegas del programa de MFA.</p>
@@ -48,29 +57,30 @@
       <div class="pull-quote" data-lang="en">Engaging with an array of new possibilities for the moving image, the films in this program work in beautiful ways with the sensorial, the discarded, and the intimate. Between displacement and labor ecologies, landscape and material memory, they pose questions about how we live within our surroundings and with ourselves.</div>
     </section>
 
-    <section class="fade fade-3">
+    <section style="margin-bottom:2.5rem;" class="fade fade-4">
+      <div class="section-label" data-lang="es">Publicaciones</div>
+      <div class="section-label" data-lang="en">Publications</div>
+      <ul class="pdf-list">
+        <li><a href="https://drive.google.com/file/d/1ioyQj8oGL8iz6fHGlSpUjFVu5VVWKCqS/view?usp=drive_link" target="_blank" rel="noopener">↗ Publication Vol. 1</a></li>
+        <li><a href="https://drive.google.com/file/d/18CyGaS_acFZSfYoeCz1nMunvDui9ESGC/view?usp=sharing" target="_blank" rel="noopener">↗ Sindhu Thirumalaisamy — Interview at Short Ends</a></li>
+        <li><a href="https://drive.google.com/file/d/1eA7rKiMcvbXwC4VmK9Y1xN-0hoSpUhIj/view?usp=sharing" target="_blank" rel="noopener">↗ Publication Vol. 2</a></li>
+        <li><a href="https://drive.google.com/file/d/16eIo_oHImlryg2N_9sS1PVn_HXISCd1h/view?usp=sharing" target="_blank" rel="noopener">↗ Paola Buontempo — Interview at Short Ends</a></li>
+      </ul>
+    </section>
+
+    <section class="fade fade-5">
       <div class="section-label" data-lang="es">Proyecciones</div>
       <div class="section-label" data-lang="en">Screenings</div>
       <ul class="screenings-list">
         <li>UWM Union Cinema — Milwaukee, US</li>
-        <li data-lang="es">Publicación Vol. 1 y Vol. 2 — Short Ends Zine</li>
-        <li data-lang="en">Publication Vol. 1 and Vol. 2 — Short Ends Zine</li>
       </ul>
     </section>
 
-    <footer>Santa Fe, Argentina — © Milton Secchi Naput</footer>
+    <footer>© Milton Secchi Naput</footer>
   </div>
-
   <script>
-    function setLang(lang) {
-      document.body.className = 'lang-' + lang;
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-      });
-    }
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
-    });
+    function setLang(lang) { document.body.className='lang-'+lang; document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.textContent.toLowerCase()===lang)); }
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
   </script>
 </body>
 </html>

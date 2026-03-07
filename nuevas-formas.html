@@ -6,18 +6,17 @@
   <title>Taller Nuevas Formas Audiovisuales — Milton Secchi Naput</title>
   <link rel="stylesheet" href="shared.css"/>
   <style>
-    .project-title { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.5rem; }
-    .project-meta { font-family: 'Inconsolata', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0; }
-    .description { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
-    .editions-list { list-style: none; }
-    .editions-list li { padding: 0.55rem 0; font-size: 1rem; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: baseline; }
-    .editions-list li:last-child { border-bottom: none; }
-    .edition-place { color: var(--ink); }
-    .edition-year { font-family: 'Inconsolata', monospace; font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .project-title { font-size:clamp(1.8rem,4.5vw,2.8rem); font-weight:300; line-height:1.1; margin-bottom:0.5rem; letter-spacing:-0.03em; }
+    .project-meta { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .project-img { width:100%; max-height:440px; object-fit:cover; display:block; margin:2rem 0; }
+    .description { font-size:1rem; line-height:1.75; margin-bottom:1.5rem; }
+    .editions-list { list-style:none; }
+    .editions-list li { padding:0.55rem 0; font-size:1rem; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:baseline; }
+    .editions-list li:last-child { border-bottom:none; }
+    .edition-year { font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--muted); white-space:nowrap; }
   </style>
 </head>
 <body class="lang-es">
-
   <nav class="site-nav" id="nav">
     <a href="index.html" class="nav-home">← Milton Secchi Naput</a>
     <div class="nav-right">
@@ -25,18 +24,16 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-
   <div class="container">
-
-    <div style="margin-bottom:3rem;" class="fade fade-1">
+    <div style="margin-bottom:1rem;" class="fade fade-1">
       <div class="project-title" data-lang="es">Taller Nuevas Formas Audiovisuales</div>
       <div class="project-title" data-lang="en">New Audiovisual Forms Workshop</div>
-      <div class="project-meta">
-        <span>2024–ongoing</span>
-      </div>
+      <div class="project-meta"><span>2024–ongoing</span></div>
     </div>
 
-    <section style="margin-bottom:2.5rem;" class="fade fade-2">
+    <img class="project-img fade fade-2" src="Taller_nuevas_formas.png" alt="Taller Nuevas Formas Audiovisuales">
+
+    <section style="margin-bottom:2.5rem;" class="fade fade-3">
       <div class="section-label" data-lang="es">Descripción</div>
       <div class="section-label" data-lang="en">Description</div>
       <p class="description" data-lang="es">El taller invita a los participantes a ver y reflexionar sobre materiales que exploran los límites expansivos de lo que entendemos como cine y/o video. A través de documentales, animaciones, ficciones híbridas y otras propuestas — con obras de Basma Alsharif, Apichatpong Weerasethakul, Rawane Nassif, Ignacio Aguero, Parastoo Anoushapoor, entre otros — el programa presenta piezas que trabajan con nociones como paisaje, archivo, performance y diversas formas de escritura, entrelazando lo público y lo íntimo, lo político y lo imaginario, desde una perspectiva decolonial y desde los sures globales.</p>
@@ -45,40 +42,32 @@
       <p class="description" data-lang="en">In addition to screenings and discussions, the workshop includes practical exercises that allow participants to activate these experiences in their own practice. Experimentation is approached as an open space for wonder, drift, and collective creation.</p>
     </section>
 
-    <section class="fade fade-3">
+    <section class="fade fade-4">
       <div class="section-label" data-lang="es">Ediciones</div>
       <div class="section-label" data-lang="en">Editions</div>
       <ul class="editions-list">
         <li>
-          <span class="edition-place" data-lang="es">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.9em;">(con Luciana Decker Orozco)</em></span>
-          <span class="edition-place" data-lang="en">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.9em;">(with Luciana Decker Orozco)</em></span>
+          <span data-lang="es">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.88em;">(con Luciana Decker Orozco)</em></span>
+          <span data-lang="en">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.88em;">(with Luciana Decker Orozco)</em></span>
           <span class="edition-year">2025</span>
         </li>
         <li>
-          <span class="edition-place">IAER — Instituto Audiovisual de Entre Ríos</span>
+          <span>IAER — Instituto Audiovisual de Entre Ríos</span>
           <span class="edition-year">2025</span>
         </li>
         <li>
-          <span class="edition-place" data-lang="es">ISCAA — Instituto Superior de Cine y Artes Audiovisuales "Fernando Birri", Santa Fe</span>
-          <span class="edition-place" data-lang="en">ISCAA — Higher Institute of Film and Audiovisual Arts "Fernando Birri", Santa Fe</span>
+          <span data-lang="es">ISCAA — Instituto Superior de Cine y Artes Audiovisuales "Fernando Birri", Santa Fe</span>
+          <span data-lang="en">ISCAA — Higher Institute of Film and Audiovisual Arts "Fernando Birri", Santa Fe</span>
           <span class="edition-year">2024</span>
         </li>
       </ul>
     </section>
 
-    <footer>Santa Fe, Argentina — © Milton Secchi Naput</footer>
+    <footer>© Milton Secchi Naput</footer>
   </div>
-
   <script>
-    function setLang(lang) {
-      document.body.className = 'lang-' + lang;
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-      });
-    }
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
-    });
+    function setLang(lang) { document.body.className='lang-'+lang; document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.textContent.toLowerCase()===lang)); }
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
   </script>
 </body>
 </html>

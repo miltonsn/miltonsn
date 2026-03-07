@@ -6,72 +6,19 @@
   <title>Rituales de Registro — Milton Secchi Naput</title>
   <link rel="stylesheet" href="shared.css"/>
   <style>
-    .project-header { margin-bottom: 3rem; }
-    .back-link {
-      font-family: 'Inconsolata', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 2.5rem;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--ink); }
-    .project-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 0.4rem;
-    }
-    .project-title-alt {
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-    .project-meta {
-      font-family: 'Inconsolata', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .synopsis {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-    .watch-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Inconsolata', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border: 1px solid var(--ink);
-      padding: 0.6rem 1.2rem;
-      transition: all 0.2s;
-      margin-bottom: 3rem;
-    }
-    .watch-btn:hover { background: var(--ink); color: var(--bg); }
-    .screenings-list { list-style: none; }
-    .screenings-list li {
-      padding: 0.45rem 0;
-      font-size: 0.95rem;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-    }
-    .screenings-list li:last-child { border-bottom: none; }
+    .project-title { font-size:clamp(2rem,5vw,3rem); font-weight:300; line-height:1.1; margin-bottom:0.4rem; letter-spacing:-0.03em; }
+    .project-title-alt { font-size:0.95rem; font-style:italic; color:var(--muted); margin-bottom:1.5rem; }
+    .project-meta { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .project-img { width:100%; max-height:440px; object-fit:cover; display:block; margin:2rem 0; }
+    .synopsis { font-size:1rem; line-height:1.75; margin-bottom:2rem; }
+    .watch-btn { display:inline-flex; align-items:center; gap:0.6rem; font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--ink); padding:0.6rem 1.2rem; transition:all 0.2s; margin-bottom:3rem; }
+    .watch-btn:hover { background:var(--ink); color:var(--bg); }
+    .screenings-list { list-style:none; }
+    .screenings-list li { padding:0.45rem 0; font-size:0.95rem; border-bottom:1px solid var(--line); color:var(--muted); }
+    .screenings-list li:last-child { border-bottom:none; }
   </style>
 </head>
 <body class="lang-es">
-
   <nav class="site-nav" id="nav">
     <a href="index.html" class="nav-home">← Milton Secchi Naput</a>
     <div class="nav-right">
@@ -79,10 +26,8 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-
   <div class="container">
-
-    <div class="project-header fade fade-1">
+    <div style="margin-bottom:1rem;" class="fade fade-1">
       <div class="project-title" data-lang="es">Rituales de Registro</div>
       <div class="project-title" data-lang="en">Ritual Records</div>
       <div class="project-title-alt" data-lang="es">Ritual Records / 2023</div>
@@ -94,18 +39,15 @@
         <span>16 min / HD</span>
       </div>
     </div>
-
-    <section style="margin-bottom:2.5rem;" class="fade fade-2">
+    <img class="project-img fade fade-2" src="Rituales_de_registro.png" alt="Rituales de Registro — still">
+    <section style="margin-bottom:2.5rem;" class="fade fade-3">
       <div class="section-label" data-lang="es">Sinopsis</div>
       <div class="section-label" data-lang="en">Synopsis</div>
       <p class="synopsis" data-lang="es">Una crónica de viaje (y sonido) incompleta; un lugar ocupado por mapas y globos terráqueos; una colección de recuerdos enfrentados a la repetición de una imagen imprecisa. En los espacios que quedan entre estas superficies, Rituales de Registro busca reflexionar sobre la relación entre paisaje y archivo en la construcción de comunidades imaginadas y memoria material.</p>
       <p class="synopsis" data-lang="en">An incomplete travel (and sound) chronicle; a place occupied by maps and globes; a collection of memories facing the repetition of an imprecise image. In the spaces that remain between these surfaces, Ritual Records aims to reflect on the relationship between landscape and archive in the construction of imagined communities and material memory.</p>
-      <a class="watch-btn" href="https://youtu.be/TQK2jM2ijko" target="_blank" rel="noopener">
-        ↗ <span data-lang="es">Ver en YouTube</span><span data-lang="en">Watch on YouTube</span>
-      </a>
+      <a class="watch-btn" href="https://youtu.be/TQK2jM2ijko" target="_blank" rel="noopener">↗ <span data-lang="es">Ver en YouTube</span><span data-lang="en">Watch on YouTube</span></a>
     </section>
-
-    <section class="fade fade-3">
+    <section class="fade fade-4">
       <div class="section-label" data-lang="es">Proyecciones</div>
       <div class="section-label" data-lang="en">Screenings</div>
       <ul class="screenings-list">
@@ -115,20 +57,11 @@
         <li>Closing Acts, Oriental Theater — Milwaukee, US</li>
       </ul>
     </section>
-
-    <footer>Santa Fe, Argentina — © Milton Secchi Naput</footer>
+    <footer>© Milton Secchi Naput</footer>
   </div>
-
   <script>
-    function setLang(lang) {
-      document.body.className = 'lang-' + lang;
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-      });
-    }
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
-    });
+    function setLang(lang) { document.body.className='lang-'+lang; document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.textContent.toLowerCase()===lang)); }
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
   </script>
 </body>
 </html>
