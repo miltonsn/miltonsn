@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yo Pasto de los Leones — Milton Secchi Naput</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    .project-title { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.4rem; }
+    .project-title-alt { font-size: 1rem; font-style: italic; color: var(--muted); margin-bottom: 1.5rem; }
+    .project-meta { font-family: 'Inconsolata', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .synopsis { font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; }
+    .watch-btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Inconsolata', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid var(--ink); padding: 0.6rem 1.2rem; transition: all 0.2s; margin-bottom: 3rem; }
+    .watch-btn:hover { background: var(--ink); color: var(--bg); }
+    .screenings-list { list-style: none; }
+    .screenings-list li { padding: 0.45rem 0; font-size: 0.95rem; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .screenings-list li:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="lang-es">
+
+  <nav class="site-nav" id="nav">
+    <a href="index.html" class="nav-home">← Milton Secchi Naput</a>
+    <div class="nav-right">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div style="margin-bottom:3rem;" class="fade fade-1">
+      <div class="project-title" data-lang="es">Yo Pasto<br>de los Leones</div>
+      <div class="project-title" data-lang="en">I, Lion's Grass</div>
+      <div class="project-title-alt" data-lang="es">I, lion's grass / 2018</div>
+      <div class="project-title-alt" data-lang="en">Yo pasto de los leones / 2018</div>
+      <div class="project-meta">
+        <span data-lang="es">Dirección: Milton Secchi Naput</span>
+        <span data-lang="en">Directed by Milton Secchi Naput</span>
+        <span>Argentina</span>
+        <span>24 min / HD</span>
+      </div>
+    </div>
+
+    <section style="margin-bottom:2.5rem;" class="fade fade-2">
+      <div class="section-label" data-lang="es">Sinopsis</div>
+      <div class="section-label" data-lang="en">Synopsis</div>
+      <p class="synopsis" data-lang="es">Una joven actriz convoca a un casting para una película sobre la inundación en Santa Fe. Entre las voces de las personas, el presente, el pasado y su propia experiencia del paisaje, comienzan a surgir preguntas.</p>
+      <p class="synopsis" data-lang="en">A young actress holds a casting call for a film about the flood in Santa Fe. Among the voices of people, present, past, and her own experience of the landscape, questions begin to emerge.</p>
+      <a class="watch-btn" href="https://vimeo.com/456237042" target="_blank" rel="noopener">
+        ↗ <span data-lang="es">Ver en Vimeo</span><span data-lang="en">Watch on Vimeo</span>
+      </a>
+    </section>
+
+    <section class="fade fade-3">
+      <div class="section-label" data-lang="es">Proyecciones y premios</div>
+      <div class="section-label" data-lang="en">Screenings &amp; Awards</div>
+      <ul class="screenings-list">
+        <li>BAFICI 2018 — Competencia Oficial / Official Competition</li>
+        <li>Al Este Festival</li>
+        <li data-lang="es">Premio del Fondo Metropolitano para las Artes y las Ciencias</li>
+        <li data-lang="en">Award by Fondo Metropolitano para las Artes y las Ciencias</li>
+      </ul>
+    </section>
+
+    <footer>Santa Fe, Argentina — © Milton Secchi Naput</footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>
