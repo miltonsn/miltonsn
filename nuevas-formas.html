@@ -4,31 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Taller Nuevas Formas Audiovisuales — Milton Secchi Naput</title>
-  <link rel="stylesheet" href="shared.css"/>
   <style>
-    .project-title { font-size:clamp(1.8rem,4.5vw,2.8rem); font-weight:300; line-height:1.1; margin-bottom:0.5rem; letter-spacing:-0.03em; }
-    .project-meta { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
-    .project-img { width:100%; max-height:440px; object-fit:cover; display:block; margin:2rem 0; }
-    .description { font-size:1rem; line-height:1.75; margin-bottom:1.5rem; }
-    .editions-list { list-style:none; }
-    .editions-list li { padding:0.55rem 0; font-size:1rem; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:baseline; }
-    .editions-list li:last-child { border-bottom:none; }
-    .edition-year { font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--muted); white-space:nowrap; }
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400&family=Geist+Mono:wght@300;400&display=swap');
+
+    :root {
+      --bg: #0c0c0c; --surface: #111111; --border: #222222;
+      --ink: #ede9e2; --ink-dim: #444440; --ink-mid: #777770;
+      --mono: 'Geist Mono', monospace; --sans: 'Geist', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--mono); min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); height: 3rem; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; }
+    .nav-back { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); transition: color 0.15s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-right { display: flex; gap: 1.5rem; align-items: center; }
+    .lang-btn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; background: none; border: 1px solid var(--border); color: var(--ink-mid); padding: 0.28rem 0.5rem; cursor: pointer; transition: all 0.15s; }
+    .lang-btn.active, .lang-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 6rem 1.5rem 6rem; }
+
+    .section-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .project-title { font-family: var(--sans); font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.4rem; color: var(--ink); }
+    .project-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .project-img { width: 100%; max-height: 440px; object-fit: cover; display: block; margin: 2rem 0; }
+
+    .description { font-family: var(--sans); font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 1.5rem; }
+
+    .editions-list { list-style: none; }
+    .editions-list li { padding: 0.6rem 0; font-size: 0.88rem; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: baseline; color: var(--ink-mid); }
+    .editions-list li:last-child { border-bottom: none; }
+    .edition-name { color: var(--ink); }
+    .edition-year { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: var(--ink-dim); white-space: nowrap; }
+
+    footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; color: var(--ink-dim); text-align: center; }
+    footer a { border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    footer a:hover { color: var(--ink-mid); }
+
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="es"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .fade { opacity: 0; animation: fadeUp 0.5s ease forwards; }
+    .fade-1 { animation-delay: 0.05s; } .fade-2 { animation-delay: 0.15s; } .fade-3 { animation-delay: 0.25s; } .fade-4 { animation-delay: 0.35s; }
+
+    @media (max-width: 600px) { .container { padding: 5rem 1.2rem 5rem; } .site-nav { padding: 0 1.2rem; } }
   </style>
 </head>
 <body class="lang-es">
-  <nav class="site-nav" id="nav">
-    <a href="index.html" class="nav-home">← Milton Secchi Naput</a>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-back">← Milton Secchi Naput</a>
     <div class="nav-right">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
+
   <div class="container">
-    <div style="margin-bottom:1rem;" class="fade fade-1">
+
+    <div class="fade fade-1" style="margin-bottom:1rem;">
       <div class="project-title" data-lang="es">Taller Nuevas Formas Audiovisuales</div>
       <div class="project-title" data-lang="en">New Audiovisual Forms Workshop</div>
-      <div class="project-meta"><span>2024–ongoing</span></div>
+      <div class="project-meta" style="margin-top:0.5rem;">
+        <span data-lang="es">2024 — continúa</span>
+        <span data-lang="en">2024 — ongoing</span>
+      </div>
     </div>
 
     <img class="project-img fade fade-2" src="Taller_nuevas_formas.png" alt="Taller Nuevas Formas Audiovisuales">
@@ -47,27 +94,34 @@
       <div class="section-label" data-lang="en">Editions</div>
       <ul class="editions-list">
         <li>
-          <span data-lang="es">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.88em;">(con Luciana Decker Orozco)</em></span>
-          <span data-lang="en">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--muted);font-size:0.88em;">(with Luciana Decker Orozco)</em></span>
+          <span class="edition-name">
+            <span data-lang="es">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--ink-dim);font-style:normal;font-size:0.85em;">(con Luciana Decker Orozco)</em></span>
+            <span data-lang="en">Centro Cultural de España — La Paz, Bolivia <em style="color:var(--ink-dim);font-style:normal;font-size:0.85em;">(with Luciana Decker Orozco)</em></span>
+          </span>
           <span class="edition-year">2025</span>
         </li>
         <li>
-          <span>IAER — Instituto Audiovisual de Entre Ríos</span>
+          <span class="edition-name">IAER — Instituto Audiovisual de Entre Ríos</span>
           <span class="edition-year">2025</span>
         </li>
         <li>
-          <span data-lang="es">ISCAA — Instituto Superior de Cine y Artes Audiovisuales "Fernando Birri", Santa Fe</span>
-          <span data-lang="en">ISCAA — Higher Institute of Film and Audiovisual Arts "Fernando Birri", Santa Fe</span>
+          <span class="edition-name">
+            <span data-lang="es">ISCAA — Instituto Superior de Cine y Artes Audiovisuales "Fernando Birri", Santa Fe</span>
+            <span data-lang="en">ISCAA — Higher Institute of Film and Audiovisual Arts "Fernando Birri", Santa Fe</span>
+          </span>
           <span class="edition-year">2024</span>
         </li>
       </ul>
     </section>
 
-    <footer><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--line);">CC BY-NC-ND 4.0</a> Milton Secchi Naput</footer>
+    <footer><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a> Milton Secchi Naput</footer>
   </div>
+
   <script>
-    function setLang(lang) { document.body.className='lang-'+lang; document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.textContent.toLowerCase()===lang)); }
-    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent.toLowerCase() === lang));
+    }
   </script>
 </body>
 </html>
