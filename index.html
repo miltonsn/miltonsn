@@ -12,10 +12,18 @@
     --surface: #111111;
     --border: #222222;
     --ink: #ede9e2;
-    --ink-dim: #444440;
+    --ink-dim: #606060;
     --ink-mid: #777770;
     --mono: 'Geist Mono', monospace;
     --serif: 'Geist', sans-serif;
+
+    --fs-2xs: 0.625rem;     /* 10px */
+    --fs-xs: 0.6875rem;     /* 11px */
+    --fs-sm: 0.75rem;       /* 12px */
+    --fs-md: 0.8125rem;     /* 13px */
+    --fs-body-sm: 0.875rem; /* 14px */
+    --fs-body: 1rem;        /* 16px */
+    --fs-body-lg: 1.1rem;   /* 17.6px */
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,7 +37,7 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV (sin site-name a la izquierda) ─────────── */
+  /* ── NAV ─────────────────────────────────────── */
   nav#main-nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -46,7 +54,7 @@
 
   nav#main-nav a {
     font-family: var(--mono);
-    font-size: 0.58rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-decoration: none;
@@ -57,7 +65,7 @@
 
   .lang-btn {
     font-family: var(--mono);
-    font-size: 0.58rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     background: none;
@@ -67,7 +75,7 @@
     cursor: pointer;
     transition: all 0.15s;
   }
-  .lang-btn:hover { border-color: var(--ink-mid); color: var(--ink); }
+  .lang-btn:hover, .lang-btn.active { border-color: var(--ink-mid); color: var(--ink); }
 
   .hamburger {
     display: none;
@@ -98,7 +106,7 @@
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
     font-family: var(--mono);
-    font-size: 0.62rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-decoration: none;
@@ -125,7 +133,6 @@
     border-bottom: 1px solid var(--border);
   }
 
-  /* Titulo en serif, normal case */
   .home-hero h1 {
     font-family: var(--serif);
     font-size: clamp(2.2rem, 5.5vw, 5rem);
@@ -137,7 +144,7 @@
 
   .home-sub {
     margin-top: 1.25rem;
-    font-size: 0.58rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -150,7 +157,7 @@
   }
   .home-links a {
     font-family: var(--mono);
-    font-size: 0.58rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-decoration: none;
@@ -172,7 +179,7 @@
   .carousel-label {
     padding: 1rem 1.5rem 0.6rem;
     border-top: 1px solid var(--border);
-    font-size: 0.55rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -199,7 +206,7 @@
   .c-card:hover { background: var(--surface); }
 
   .c-card-label {
-    font-size: 0.52rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -209,7 +216,7 @@
 
   .c-card-title {
     font-family: var(--mono);
-    font-size: 0.75rem;
+    font-size: var(--fs-sm);
     font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -218,7 +225,7 @@
   }
 
   .c-card-meta {
-    font-size: 0.55rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -242,7 +249,7 @@
   }
 
   .section-tag {
-    font-size: 0.55rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -258,7 +265,7 @@
 
   .bio-text p {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: var(--fs-body-lg);
     font-weight: 300;
     line-height: 1.75;
     color: var(--ink);
@@ -273,7 +280,7 @@
   .sb-block { margin-bottom: 2rem; }
 
   .sb-label {
-    font-size: 0.52rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -282,7 +289,7 @@
   }
 
   .sb-block p, .sb-block li {
-    font-size: 0.68rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.04em;
     color: var(--ink-mid);
     list-style: none;
@@ -294,7 +301,7 @@
   .cv-group { margin-bottom: 2.75rem; }
 
   .cv-group-title {
-    font-size: 0.52rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -313,79 +320,79 @@
   }
 
   .cv-year {
-    font-size: 0.58rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.08em;
     color: var(--ink-dim);
   }
 
   .cv-body h4 {
     font-family: var(--serif);
-    font-size: 0.98rem;
+    font-size: var(--fs-body);
     font-weight: 300;
-    font-style: italic;
     color: var(--ink);
     margin-bottom: 0.12rem;
   }
 
   .cv-body p {
-    font-size: 0.62rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.06em;
     color: var(--ink-dim);
   }
 
-  /* ── FILMS ───────────────────────────────────── */
+  /* ── FILMS — same layout as .prog-row ───────────── */
   .film-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
+    align-items: start;
     cursor: pointer;
   }
 
-  .film-top {
-    display: grid;
-    grid-template-columns: 1fr 18px;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.95rem 0;
-  }
-
-  .film-title-wrap { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-
-  .film-title {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--ink-mid);
-    transition: color 0.15s;
-  }
-  .film-row:hover .film-title { color: var(--ink); }
-
-  .film-specs {
-    font-size: 0.56rem;
-    letter-spacing: 0.1em;
+  .film-year-col {
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-dim);
+    line-height: 1.7;
+    padding-top: 0.1rem;
   }
 
-  .film-plus {
-    font-size: 0.75rem;
+  .film-body-col h3 {
+    font-family: var(--serif);
+    font-size: var(--fs-body);
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .film-body-col h3 a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .film-body-col h3 a:hover { color: var(--ink-mid); border-bottom-color: var(--ink-mid); }
+
+  .film-specs {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.04em;
     color: var(--ink-dim);
-    transition: transform 0.25s, color 0.15s;
-    text-align: center;
-    user-select: none;
-    font-family: var(--mono);
+    margin-top: 0.1rem;
   }
-  .film-row.open .film-plus { transform: rotate(45deg); color: var(--ink); }
 
-  .film-body { display: none; padding: 0 0 1.5rem; max-width: 560px; }
+  .film-plus { display: none; }
+
+  .film-body { display: none; padding: 0.6rem 0 0.4rem; max-width: 560px; }
   .film-row.open .film-body { display: block; }
 
   .film-synopsis {
     font-family: var(--serif);
-    font-size: 0.92rem;
+    font-size: var(--fs-body-sm);
     font-weight: 300;
     line-height: 1.75;
     color: var(--ink-mid);
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   .film-crew {
@@ -394,15 +401,36 @@
     gap: 0.5rem 1.75rem;
   }
 
-  .crew-item { font-size: 0.6rem; letter-spacing: 0.04em; color: var(--ink-dim); line-height: 1.5; }
+  .crew-item {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
   .crew-role {
     display: block;
-    font-size: 0.5rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #3a3a38;
+    color: var(--ink-dim);
     margin-bottom: 0.1rem;
   }
+
+  .film-expand-btn {
+    font-family: var(--mono);
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    margin-top: 0.5rem;
+    display: inline-block;
+    transition: color 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .film-expand-btn:hover { color: var(--ink); border-color: var(--ink-mid); }
+  .film-row.open .film-expand-btn { display: none; }
 
   /* ── PROGRAMMING ─────────────────────────────── */
   .prog-row {
@@ -415,7 +443,7 @@
   }
 
   .prog-role-col {
-    font-size: 0.55rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -424,15 +452,14 @@
 
   .prog-body h3 {
     font-family: var(--serif);
-    font-size: 1rem;
+    font-size: var(--fs-body);
     font-weight: 300;
-    font-style: italic;
     color: var(--ink);
     margin-bottom: 0.3rem;
   }
 
   .prog-body p {
-    font-size: 0.65rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.04em;
     color: var(--ink-dim);
     line-height: 1.6;
@@ -441,7 +468,7 @@
   .prog-body a {
     display: inline-block;
     margin-top: 0.5rem;
-    font-size: 0.55rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
@@ -454,7 +481,7 @@
 
   .prog-films { list-style: none; margin-top: 0.7rem; }
   .prog-films li {
-    font-size: 0.62rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.04em;
     color: var(--ink-dim);
     padding: 0.28rem 0;
@@ -474,7 +501,7 @@
     gap: 0.5rem;
   }
   footer p {
-    font-size: 0.52rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-dim);
@@ -486,7 +513,7 @@
     .hamburger { display: flex; }
     .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
     .bio-sidebar { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
-    .prog-row { grid-template-columns: 1fr; gap: 0.35rem; }
+    .prog-row, .film-row { grid-template-columns: 1fr; gap: 0.35rem; }
     .cv-row { grid-template-columns: 56px 1fr; }
     .home-hero h1 { font-size: clamp(1.75rem, 9vw, 3rem); }
     .c-card { width: 195px; }
@@ -518,18 +545,49 @@
   .page.active .cv-row:nth-child(3), .page.active .prog-row:nth-child(3) { animation-delay: 0.12s; }
   .page.active .cv-row:nth-child(4), .page.active .prog-row:nth-child(4) { animation-delay: 0.16s; }
   .page.active .cv-row:nth-child(5), .page.active .prog-row:nth-child(5) { animation-delay: 0.20s; }
+
+  /* ── FONT SIZE OVERRIDES ─────────────────────── */
+  nav#main-nav a,
+  .lang-btn,
+  .home-sub,
+  .home-links a,
+  .cv-year { font-size: var(--fs-sm); }
+
+  .carousel-label,
+  .section-tag,
+  .film-year-col,
+  .film-expand-btn,
+  .prog-role-col,
+  .prog-body a,
+  .c-card-meta { font-size: var(--fs-xs); }
+
+  .c-card-label,
+  .sb-label,
+  .cv-group-title,
+  footer p,
+  .crew-role { font-size: var(--fs-2xs); }
+
+  .mobile-menu a,
+  .cv-body p,
+  .film-specs,
+  .prog-films li,
+  .crew-item { font-size: var(--fs-sm); }
+
+  .prog-body p,
+  .sb-block p,
+  .sb-block li { font-size: var(--fs-md); }
 </style>
 </head>
 <body>
 
 <!-- NAV: solo links a la derecha, sin site-name -->
 <nav id="main-nav">
-  <a href="#" data-page="home" onclick="showPage('home');return false;" data-es="Inicio" data-en="Home" style="color:var(--ink-mid);">←</a>
-  <a href="#" data-page="bio"         onclick="showPage('bio');return false;"         data-es="Bio"          data-en="Bio">Bio</a>
-  <a href="#" data-page="cv"          onclick="showPage('cv');return false;"           data-es="CV"           data-en="CV">CV</a>
-  <a href="#" data-page="films"       onclick="showPage('films');return false;"        data-es="Cine / Video" data-en="Film / Video">Cine / Video</a>
-  <a href="#" data-page="programming" onclick="showPage('programming');return false;" data-es="Programación" data-en="Programming">Programación</a>
-  <a href="#" data-page="talks" onclick="showPage('talks');return false;" data-es="Talleres, conferencias" data-en="Workshops, lectures">Talleres, conferencias</a>
+  <a href="#" data-page="home" onclick="showPage('home');return false;" style="color:var(--ink-mid);">←</a>
+  <a href="#" data-page="bio"         onclick="showPage('bio');return false;"         data-es="Bio"                   data-en="Bio">Bio</a>
+  <a href="#" data-page="programming" onclick="showPage('programming');return false;" data-es="Programación"          data-en="Programming">Programación</a>
+  <a href="#" data-page="talks"       onclick="showPage('talks');return false;"       data-es="Talleres, conferencias" data-en="Workshops, lectures">Talleres, conferencias</a>
+  <a href="#" data-page="films"       onclick="showPage('films');return false;"       data-es="Cine / Video"          data-en="Film / Video">Cine / Video</a>
+  <a href="#" data-page="cv"          onclick="showPage('cv');return false;"          data-es="CV"                    data-en="CV">CV</a>
   <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
@@ -540,10 +598,10 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#" onclick="showPage('home');toggleMenu();return false;">← Inicio</a>
   <a href="#" onclick="showPage('bio');toggleMenu();return false;">Bio</a>
-  <a href="#" onclick="showPage('cv');toggleMenu();return false;">CV</a>
-  <a href="#" onclick="showPage('films');toggleMenu();return false;">Cine / Video</a>
   <a href="#" onclick="showPage('programming');toggleMenu();return false;">Programación</a>
   <a href="#" onclick="showPage('talks');toggleMenu();return false;">Talleres, conferencias</a>
+  <a href="#" onclick="showPage('films');toggleMenu();return false;">Cine / Video</a>
+  <a href="#" onclick="showPage('cv');toggleMenu();return false;">CV</a>
   <button class="lang-btn" style="align-self:start;margin-top:0.5rem" onclick="toggleLang();toggleMenu()">EN</button>
 </div>
 
@@ -658,6 +716,36 @@
     </div>
 
     <div class="cv-group">
+      <p class="cv-group-title es-text">Educación</p>
+      <p class="cv-group-title en-text" style="display:none">Education</p>
+      <div class="cv-row"><span class="cv-year">2024</span><div class="cv-body"><h4 class="es-text">Maestría en Cinematic Arts (MFA)</h4><h4 class="en-text" style="display:none">Master of Fine Arts in Cinematic Arts</h4><p>University of Wisconsin-Milwaukee</p></div></div>
+      <div class="cv-row"><span class="cv-year">2009</span><div class="cv-body"><h4 class="es-text">Dirección de Montaje</h4><h4 class="en-text" style="display:none">Editing Direction</h4><p>ENERC — Escuela Nacional de Experimentación y Realización Cinematográfica</p></div></div>
+    </div>
+
+    <div class="cv-group">
+      <p class="cv-group-title es-text">Programación</p>
+      <p class="cv-group-title en-text" style="display:none">Programming</p>
+      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Programador — Temporada de Rescate, Cinemateca de Entre Ríos</h4><h4 class="en-text" style="display:none">Programmer — Temporada de Rescate, Entre Ríos Cinematheque</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2024 —</span><div class="cv-body"><h4 class="es-text">Programador — FICER, Festival Internacional de Cine de Entre Ríos</h4><h4 class="en-text" style="display:none">Programmer — FICER, Festival Internacional de Cine de Entre Ríos</h4><p class="es-text">continúa</p><p class="en-text" style="display:none">ongoing</p></div></div>
+      <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4>Personal Outsides — UWM Union Cinema, Milwaukee</h4></div></div>
+      <div class="cv-row"><span class="cv-year"></span><div class="cv-body"><h4 class="es-text">Programador y Jurado — PLAY International Experimental Film and Video Festival</h4><h4 class="en-text" style="display:none">Programmer and Jury — PLAY International Experimental Film and Video Festival</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2018</span><div class="cv-body"><h4 class="es-text">Programación — Encuentros de Cine, serie de películas latinoamericanas con presencia de realizadores</h4><h4 class="en-text" style="display:none">Programming — Cinema Encounters, latin american screening series with filmmakers in attendance</h4></div></div>
+    </div>
+
+    <div class="cv-group">
+      <p class="cv-group-title es-text">Talleres y Charlas</p>
+      <p class="cv-group-title en-text" style="display:none">Workshops &amp; Lectures</p>
+      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — CCE La Paz, Bolivia (con Luciana Decker Orozco)</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — CCE La Paz, Bolivia (with Luciana Decker Orozco)</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — IAAER, Entre Ríos</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — IAAER, Entre Ríos</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2024</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — ISCAA "Fernando Birri", Santa Fe</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — ISCAA "Fernando Birri", Santa Fe</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4 class="es-text">Charla y proyección "Santa Fe - notas, 2017-2019" — UC Santa Cruz, EEUU</h4><h4 class="en-text" style="display:none">Talk and screening "Santa Fe - notes, 2017-2019" — UC Santa Cruz, US</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4 class="es-text">Charla — Bienal Arte Joven, Buenos Aires</h4><h4 class="en-text" style="display:none">Talk — Young Art Biennial, Buenos Aires</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2022</span><div class="cv-body"><h4 class="es-text">Seminario "Distancia, paisaje, archivo" — ISCAA Fernando Birri, Santa Fe</h4><h4 class="en-text" style="display:none">Seminar "Distancia, paisaje, archivo" — ISCAA Fernando Birri, Santa Fe</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4 class="es-text">Seminario "Rastro, paisaje, archivo" — PLAY Festival</h4><h4 class="en-text" style="display:none">Seminar "Rastro, paisaje, archivo" — PLAY Festival</h4></div></div>
+      <div class="cv-row"><span class="cv-year">2017</span><div class="cv-body"><h4 class="es-text">Taller de Arte Archival con Francisco Bitar — Museo Rosa Galisteo, Santa Fe; Museo Genaro Pérez, Córdoba</h4><h4 class="en-text" style="display:none">Archival Art Workshop with Francisco Bitar — Rosa Galisteo Museum, Santa Fe; Genaro Pérez Museum, Córdoba</h4></div></div>
+    </div>
+
+    <div class="cv-group">
       <p class="cv-group-title es-text">Filmografía — Dirección</p>
       <p class="cv-group-title en-text" style="display:none">Selected Films — Director</p>
       <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4>Rituales de Registro / Ritual Records</h4><p>16 min / HD — Play, FICER, Insular Film Festival</p></div></div>
@@ -671,46 +759,27 @@
     </div>
 
     <div class="cv-group">
-      <p class="cv-group-title es-text">Filmografía — Montaje</p>
-      <p class="cv-group-title en-text" style="display:none">Selected Films — Editor</p>
+      <p class="cv-group-title es-text">Filmografía — Asistencia de Dirección</p>
+      <p class="cv-group-title en-text" style="display:none">Selected Films — Assistant Director</p>
+      <div class="cv-row"><span class="cv-year">2022</span><div class="cv-body"><h4>Luminum <span style="font-style:normal;font-size:0.72rem">(dir. Maximiliano Schonfeld)</span></h4><p>62 min — Visions du Réel 2022, Festival de Mar del Plata</p></div></div>
+      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4>Una Escuela en Cerro Hueso <span style="font-style:normal;font-size:0.72rem">(dir. Betania Cappato)</span></h4><p>70 min — Berlinale 2021 Mención Especial, AFF Youth, BIKI, Beijing IFF</p></div></div>
+      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4>En Compañía / Companions <span style="font-style:normal;font-size:0.72rem">(dir. Ada Frontini)</span></h4><p>63 min — BAFICI 2021, Jeonju IFF 2021</p></div></div>
       <div class="cv-row"><span class="cv-year">2017</span><div class="cv-body"><h4>Toublanc <span style="font-style:normal;font-size:0.72rem">(dir. Iván Fund)</span></h4><p>100 min — BAFICI 2017, 3 Continents Nantes, FiDocs Chile</p></div></div>
       <div class="cv-row"><span class="cv-year">2016</span><div class="cv-body"><h4>La Siesta del Tigre <span style="font-style:normal;font-size:0.72rem">(dir. Maximiliano Schonfeld)</span></h4><p>64 min — Mar del Plata IFF, Doclisboa, Festival Márgenes</p></div></div>
       <div class="cv-row"><span class="cv-year">2015</span><div class="cv-body"><h4>La Helada Negra / The Black Frost <span style="font-style:normal;font-size:0.72rem">(dir. Maximiliano Schonfeld)</span></h4><p>90 min — Berlinale 2015, Hong Kong IFF, Cinélatino Toulouse</p></div></div>
+    </div>
+
+    <div class="cv-group">
+      <p class="cv-group-title es-text">Filmografía — Montaje</p>
+      <p class="cv-group-title en-text" style="display:none">Selected Films — Editor</p>
       <div class="cv-row"><span class="cv-year">2013</span><div class="cv-body"><h4>AB <span style="font-style:normal;font-size:0.72rem">(dir. Iván Fund &amp; Andreas Koefoed)</span></h4><p>67 min — BAFICI 2013, CPH:DOX</p></div></div>
       <div class="cv-row"><span class="cv-year">2012</span><div class="cv-body"><h4>El Gran Río / The Great River <span style="font-style:normal;font-size:0.72rem">(dir. Rubén Plataneo)</span></h4><p class="es-text">92 min — Mejor Documental Flandes Latin Film Festival, Bariloche Film Festival</p><p class="en-text" style="display:none">92 min — Best Documentary Flandes Latin Film Festival, Bariloche Film Festival</p></div></div>
     </div>
 
     <div class="cv-group">
-      <p class="cv-group-title es-text">Filmografía — Asistencia de Dirección</p>
-      <p class="cv-group-title en-text" style="display:none">Selected Films — Assistant Director</p>
-      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4>Una Escuela en Cerro Hueso <span style="font-style:normal;font-size:0.72rem">(dir. Betania Cappato)</span></h4><p>70 min — Berlinale 2021 Mención Especial, AFF Youth, BIKI, Beijing IFF</p></div></div>
-      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4>En Compañía / Companions <span style="font-style:normal;font-size:0.72rem">(dir. Ada Frontini)</span></h4><p>63 min — BAFICI 2021, Jeonju IFF 2021</p></div></div>
-    </div>
-
-    <div class="cv-group">
-      <p class="cv-group-title es-text">Programación</p>
-      <p class="cv-group-title en-text" style="display:none">Programming</p>
-      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Programador — Temporada de Rescate, Cinemateca de Entre Ríos</h4><h4 class="en-text" style="display:none">Programmer — Temporada de Rescate, Entre Ríos Cinematheque</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2024 —</span><div class="cv-body"><h4 class="es-text">Programador — FICER, Festival Internacional de Cine Experimental de Entre Ríos</h4><h4 class="en-text" style="display:none">Programmer — FICER, International Independent Film Festival of Entre Ríos</h4><p class="es-text">continúa</p><p class="en-text" style="display:none">ongoing</p></div></div>
-      <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4>Personal Outsides — UWM Union Cinema, Milwaukee</h4></div></div>
-      <div class="cv-row"><span class="cv-year"></span><div class="cv-body"><h4 class="es-text">Programador y Jurado — PLAY International Experimental Film and Video Festival</h4><h4 class="en-text" style="display:none">Programmer and Jury — PLAY International Experimental Film and Video Festival</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2018</span><div class="cv-body"><h4 class="es-text">Programación — Encuentros de Cine, serie de películas latinoamericanas con presencia de realizadores</h4><h4 class="en-text" style="display:none">Programming — Cinema Encounters, latin american screening series with filmmakers in attendance</h4></div></div>
-    </div>
-
-    <div class="cv-group">
-      <p class="cv-group-title es-text">Talleres y Charlas</p>
-      <p class="cv-group-title en-text" style="display:none">Workshops &amp; Lectures</p>
-      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — CCE La Paz, Bolivia (con Luciana Decker Orozco)</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — CCE La Paz, Bolivia (with Luciana Decker Orozco)</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2025</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — IAER, Entre Ríos</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — IAER, Entre Ríos</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2024 —</span><div class="cv-body"><h4 class="es-text">Taller Nuevas Formas Audiovisuales — ISCAA "Fernando Birri", Santa Fe</h4><h4 class="en-text" style="display:none">New Audiovisual Forms Workshop — ISCAA "Fernando Birri", Santa Fe</h4><p class="es-text">continúa</p><p class="en-text" style="display:none">ongoing</p></div></div>
-      <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4 class="es-text">Charla y proyección — University of California, Santa Cruz, EEUU</h4><h4 class="en-text" style="display:none">Talk and screening — University of California, Santa Cruz, US</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2021</span><div class="cv-body"><h4 class="es-text">Seminario "Distancia, paisaje, archivo" — PLAY Festival</h4><h4 class="en-text" style="display:none">Seminar "Distance, landscape, archive" — PLAY Festival</h4></div></div>
-      <div class="cv-row"><span class="cv-year">2017</span><div class="cv-body"><h4 class="es-text">Taller de Arte Archival con Francisco Bitar — Museo Rosa Galisteo, Santa Fe; Museo Genaro Pérez, Córdoba</h4><h4 class="en-text" style="display:none">Archival Art Workshop with Francisco Bitar — Rosa Galisteo Museum, Santa Fe; Genaro Pérez Museum, Córdoba</h4></div></div>
-    </div>
-
-    <div class="cv-group">
       <p class="cv-group-title es-text">Becas, Premios y Residencias</p>
       <p class="cv-group-title en-text" style="display:none">Grants, Awards &amp; Residencies</p>
+      <div class="cv-row"><span class="cv-year">2024</span><div class="cv-body"><h4>Greater Milwaukee Foundation Victor Vega Educational Scholarship — US</h4></div></div>
       <div class="cv-row"><span class="cv-year">2023</span><div class="cv-body"><h4 class="es-text">Beca Adoor Gopalakrishnan Film Archive &amp; Research</h4><h4 class="en-text" style="display:none">Adoor Gopalakrishnan Film Archive &amp; Research Scholarship</h4></div></div>
       <div class="cv-row"><span class="cv-year">2019–20</span><div class="cv-body"><h4>Collaborative Studio Fellow — UnionDocs, Brooklyn, NY</h4></div></div>
       <div class="cv-row"><span class="cv-year">2018</span><div class="cv-body"><h4 class="es-text">Premio del Fondo Metropolitano para la Cultura, el Arte y la Ciencia — Yo Pasto de los Leones</h4><h4 class="en-text" style="display:none">Award from the Metropolitan Fund for Culture, Art and Science — I, Lion's Grass</h4></div></div>
@@ -719,13 +788,6 @@
       <div class="cv-row"><span class="cv-year">2017</span><div class="cv-body"><h4 class="es-text">Residente — Bienal de Arte Joven de Buenos Aires</h4><h4 class="en-text" style="display:none">Resident — Buenos Aires Youth Art Biennial</h4></div></div>
       <div class="cv-row"><span class="cv-year">2017</span><div class="cv-body"><h4 class="es-text">Premio a la creación documental — Provincia de Santa Fe</h4><h4 class="en-text" style="display:none">Prize for documentary creation — Santa Fe Province</h4></div></div>
       <div class="cv-row"><span class="cv-year">2016</span><div class="cv-body"><h4 class="es-text">Beca — Fondo Nacional de las Artes</h4><h4 class="en-text" style="display:none">Grant — National Arts Fund (Fondo Nacional de las Artes)</h4></div></div>
-    </div>
-
-    <div class="cv-group">
-      <p class="cv-group-title es-text">Educación</p>
-      <p class="cv-group-title en-text" style="display:none">Education</p>
-      <div class="cv-row"><span class="cv-year">2024</span><div class="cv-body"><h4 class="es-text">Maestría en Cinematic Arts (MFA)</h4><h4 class="en-text" style="display:none">Master of Fine Arts in Cinematic Arts</h4><p>University of Wisconsin-Milwaukee</p></div></div>
-      <div class="cv-row"><span class="cv-year">2009</span><div class="cv-body"><h4 class="es-text">Dirección de Montaje</h4><h4 class="en-text" style="display:none">Editing Direction</h4><p>ENERC — Escuela Nacional de Experimentación y Realización Cinematográfica</p></div></div>
     </div>
 
   </div>
@@ -741,91 +803,133 @@
     </div>
 
     <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title"><a href="ritual-records.html" onclick="event.stopPropagation();" style="border-bottom:1px solid var(--border);transition:border-color 0.15s;">Rituales de registro</a></span><span class="film-specs">2023 · 16 min · HD</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">Una crónica de viaje (y sonido) incompleta; un lugar ocupado por mapas y globos terráqueos; una colección de recuerdos enfrentados a la repetición de una imagen imprecisa. En los espacios que quedan entre estas superficies, Rituales de Registro busca reflexionar sobre la relación entre paisaje y archivo en la construcción de comunidades imaginadas y memoria material.</p>
-        <p class="film-synopsis en-text" style="display:none">An incomplete travel (and sound) chronicle; a place occupied by maps and globes; a collection of memories facing the repetition of an imprecise image. In the spaces that remain between these surfaces, Ritual Records aims to reflect on the relationship between landscape and archive in the construction of imagined communities and material memory.</p>
-        <div class="film-crew">
-          <div class="crew-item"><span class="crew-role es-text">Dirección y producción</span><span class="crew-role en-text" style="display:none">Directed &amp; produced by</span>Milton Secchi Naput</div>
-          <div class="crew-item"><span class="crew-role es-text">Jefa de Producción</span><span class="crew-role en-text" style="display:none">Production Manager</span>Gisel Bugliolo</div>
-          <div class="crew-item"><span class="crew-role es-text">Postprod. Sonido</span><span class="crew-role en-text" style="display:none">Sound Post.</span>Andrés Perugini</div>
-          <div class="crew-item"><span class="crew-role es-text">Postprod. Imagen</span><span class="crew-role en-text" style="display:none">Image Post.</span>Iván Fund</div>
-        </div>
-        <div style="margin-top:1.2rem;"><a href="https://youtu.be/TQK2jM2ijko" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en YouTube</span><span class="en-text" style="display:none">Watch on YouTube</span></a></div>
-      </div>
-    </div>
-
-    <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title es-text"><a href="santa-fe-notas.html" onclick="event.stopPropagation();" style="border-bottom:1px solid var(--border);transition:border-color 0.15s;">Santa Fe — notas, 2017–2019</a></span><span class="film-title en-text" style="display:none"><a href="santa-fe-notas.html" onclick="event.stopPropagation();" style="border-bottom:1px solid var(--border);transition:border-color 0.15s;">Santa Fe — notes, 2017–2019</a></span><span class="film-specs">2021 · 58 min · HD</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">Santa Fe - notas, 2017-2019 es una historia hecha de fragmentos de paisajes, edificios, voces y objetos. Es una película construida sobre la relación entre arte y colonia, memoria y amenaza, pueblos originarios y silencio.</p>
-        <p class="film-synopsis en-text" style="display:none">Santa Fe - notes, 2017-2019 is a story made of fragments of landscapes, buildings, voices and objects. It is a film built on the relationship between art and colony, memory and threat, native people and silence.</p>
-        <div class="film-crew">
-          <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div>
-          <div class="crew-item"><span class="crew-role es-text">Fotografía y Cámara</span><span class="crew-role en-text" style="display:none">Photography</span>Eduardo Crespo</div>
-          <div class="crew-item"><span class="crew-role es-text">Guión</span><span class="crew-role en-text" style="display:none">Screenplay</span>Francisco Bitar &amp; Milton Secchi</div>
-          <div class="crew-item"><span class="crew-role es-text">Montaje</span><span class="crew-role en-text" style="display:none">Editing</span>Iair Michel Attias</div>
-          <div class="crew-item"><span class="crew-role es-text">Dir. Sonido</span><span class="crew-role en-text" style="display:none">Sound Dir.</span>Andrés Perugini</div>
-          <div class="crew-item"><span class="crew-role es-text">Música</span><span class="crew-role en-text" style="display:none">Music</span>Esteban Coutaz</div>
-          <div class="crew-item"><span class="crew-role es-text">Jefa de Producción</span><span class="crew-role en-text" style="display:none">Production Manager</span>Gisel Bugliolo</div>
-          <div class="crew-item"><span class="crew-role es-text">Asist. Dirección</span><span class="crew-role en-text" style="display:none">Asst. Direction</span>Francisco Bitar, Max. Schonfeld</div>
-        </div>
-        <div style="margin-top:1.2rem;"><a href="https://vimeo.com/453722705" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en Vimeo</span><span class="en-text" style="display:none">Watch on Vimeo</span></a></div>
-      </div>
-    </div>
-
-    <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title es-text"><a href="yo-pasto.html" onclick="event.stopPropagation();" style="border-bottom:1px solid var(--border);transition:border-color 0.15s;">Yo pasto de los leones</a></span><span class="film-title en-text" style="display:none"><a href="yo-pasto.html" onclick="event.stopPropagation();" style="border-bottom:1px solid var(--border);transition:border-color 0.15s;">I, lion's grass</a></span><span class="film-specs">2018 · 24 min · HD</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">Una joven actriz convoca a un casting para una película sobre la inundación en Santa Fe. Entre las voces de las personas, el presente, el pasado y su propia experiencia del paisaje, comienzan a surgir preguntas.</p>
-        <p class="film-synopsis en-text" style="display:none">A young actress holds a casting call for a film about the flood in Santa Fe. Among the voices of people, present, past, and her own experience of the landscape, questions begin to emerge.</p>
-        <div class="film-crew">
-          <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div>
-        </div>
-        <div style="margin-top:1.2rem;"><a href="https://vimeo.com/456237042" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en Vimeo</span><span class="en-text" style="display:none">Watch on Vimeo</span></a></div>
-      </div>
-    </div>
-
-    <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title">Resolana nocturna</span><span class="film-specs es-text">2018 · Videoinstalación · Galería Proyecto Fuga</span><span class="film-specs en-text" style="display:none">2018 · Video Installation · Galería Proyecto Fuga</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">Videoinstalación presentada en la Galería Proyecto Fuga.</p>
-        <p class="film-synopsis en-text" style="display:none">Video installation presented at Galería Proyecto Fuga.</p>
-      </div>
-    </div>
-
-    <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title">Donde no hay nada</span><span class="film-specs">2015</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <div class="film-crew"><div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div></div>
-      </div>
-    </div>
-
-    <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title">Lo-Fi</span><span class="film-specs">2011 · 10 min</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">¿Cómo suenan los viajes de entrecasa?</p>
-        <p class="film-synopsis en-text" style="display:none">What do in-between trips sound like?</p>
-        <div class="film-crew">
-          <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi</div>
-          <div class="crew-item"><span class="crew-role es-text">Fotografía</span><span class="crew-role en-text" style="display:none">Photography</span>Gonzalo Gatto</div>
-          <div class="crew-item"><span class="crew-role es-text">Producción</span><span class="crew-role en-text" style="display:none">Production</span>Ignacio Lillini</div>
-          <div class="crew-item"><span class="crew-role es-text">Arte</span><span class="crew-role en-text" style="display:none">Art</span>Betania Cappato</div>
-          <div class="crew-item"><span class="crew-role es-text">Sonido</span><span class="crew-role en-text" style="display:none">Sound</span>Federico Vitor</div>
+      <div class="film-year-col es-text">Dirección<br>2023</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2023</div>
+      <div class="film-body-col">
+        <h3><a href="ritual-records.html" onclick="event.stopPropagation();" class="es-text">Rituales de registro</a><a href="ritual-records.html" onclick="event.stopPropagation();" class="en-text" style="display:none">Ritual Records</a></h3>
+        <p class="film-specs">16 min · HD</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">Una crónica de viaje (y sonido) incompleta; un lugar ocupado por mapas y globos terráqueos; una colección de recuerdos enfrentados a la repetición de una imagen imprecisa. En los espacios que quedan entre estas superficies, Rituales de Registro busca reflexionar sobre la relación entre paisaje y archivo en la construcción de comunidades imaginadas y memoria material.</p>
+          <p class="film-synopsis en-text" style="display:none">An incomplete travel (and sound) chronicle; a place occupied by maps and globes; a collection of memories facing the repetition of an imprecise image. In the spaces that remain between these surfaces, Ritual Records aims to reflect on the relationship between landscape and archive in the construction of imagined communities and material memory.</p>
+          <div class="film-crew">
+            <div class="crew-item"><span class="crew-role es-text">Dirección y producción</span><span class="crew-role en-text" style="display:none">Directed &amp; produced by</span>Milton Secchi Naput</div>
+            <div class="crew-item"><span class="crew-role es-text">Jefa de Producción</span><span class="crew-role en-text" style="display:none">Production Manager</span>Gisel Bugliolo</div>
+            <div class="crew-item"><span class="crew-role es-text">Postprod. Sonido</span><span class="crew-role en-text" style="display:none">Sound Post.</span>Andrés Perugini</div>
+            <div class="crew-item"><span class="crew-role es-text">Postprod. Imagen</span><span class="crew-role en-text" style="display:none">Image Post.</span>Iván Fund</div>
+          </div>
+          <div style="margin-top:1rem;"><a href="https://youtu.be/TQK2jM2ijko" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en YouTube</span><span class="en-text" style="display:none">Watch on YouTube</span></a></div>
         </div>
       </div>
     </div>
 
     <div class="film-row" onclick="toggleFilm(this)">
-      <div class="film-top"><div class="film-title-wrap"><span class="film-title es-text">Verano</span><span class="film-title en-text" style="display:none">Summer</span><span class="film-specs">2010 · 14 min</span></div><span class="film-plus">+</span></div>
-      <div class="film-body">
-        <p class="film-synopsis es-text">Cinco jóvenes desafiantes se juntan en un patio cerrado. Del silencio que emana la siesta se desprenden los acordes de una banda de rock. Inmutables, tocan mientras el tiempo se desdobla y pierde la estabilidad del presente.</p>
-        <p class="film-synopsis en-text" style="display:none">Five defiant young people gather in an enclosed courtyard. From the silence of the siesta, the chords of a rock band emerge. Unmoving, they play while time unfolds and loses the stability of the present.</p>
-        <div class="film-crew">
-          <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi</div>
-          <div class="crew-item"><span class="crew-role es-text">Fotografía</span><span class="crew-role en-text" style="display:none">Photography</span>Eduardo Crespo</div>
-          <div class="crew-item"><span class="crew-role es-text">Arte</span><span class="crew-role en-text" style="display:none">Art</span>Federico Lastra</div>
-          <div class="crew-item"><span class="crew-role es-text">Sonido</span><span class="crew-role en-text" style="display:none">Sound</span>Federico Vitor</div>
+      <div class="film-year-col es-text">Dirección<br>2021</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2021</div>
+      <div class="film-body-col">
+        <h3><a href="santa-fe-notas.html" onclick="event.stopPropagation();" class="es-text">Santa Fe — notas, 2017–2019</a><a href="santa-fe-notas.html" onclick="event.stopPropagation();" class="en-text" style="display:none">Santa Fe — notes, 2017–2019</a></h3>
+        <p class="film-specs">58 min · HD</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">Santa Fe - notas, 2017-2019 es una historia hecha de fragmentos de paisajes, edificios, voces y objetos. Es una película construida sobre la relación entre arte y colonia, memoria y amenaza, pueblos originarios y silencio.</p>
+          <p class="film-synopsis en-text" style="display:none">Santa Fe - notes, 2017-2019 is a story made of fragments of landscapes, buildings, voices and objects. It is a film built on the relationship between art and colony, memory and threat, native people and silence.</p>
+          <div class="film-crew">
+            <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div>
+            <div class="crew-item"><span class="crew-role es-text">Fotografía y Cámara</span><span class="crew-role en-text" style="display:none">Photography</span>Eduardo Crespo</div>
+            <div class="crew-item"><span class="crew-role es-text">Guión</span><span class="crew-role en-text" style="display:none">Screenplay</span>Francisco Bitar &amp; Milton Secchi</div>
+            <div class="crew-item"><span class="crew-role es-text">Montaje</span><span class="crew-role en-text" style="display:none">Editing</span>Iair Michel Attias</div>
+            <div class="crew-item"><span class="crew-role es-text">Dir. Sonido</span><span class="crew-role en-text" style="display:none">Sound Dir.</span>Andrés Perugini</div>
+            <div class="crew-item"><span class="crew-role es-text">Música</span><span class="crew-role en-text" style="display:none">Music</span>Esteban Coutaz</div>
+            <div class="crew-item"><span class="crew-role es-text">Jefa de Producción</span><span class="crew-role en-text" style="display:none">Production Manager</span>Gisel Bugliolo</div>
+            <div class="crew-item"><span class="crew-role es-text">Asist. Dirección</span><span class="crew-role en-text" style="display:none">Asst. Direction</span>Francisco Bitar, Max. Schonfeld</div>
+          </div>
+          <div style="margin-top:1rem;"><a href="https://vimeo.com/453722705" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en Vimeo</span><span class="en-text" style="display:none">Watch on Vimeo</span></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-row" onclick="toggleFilm(this)">
+      <div class="film-year-col es-text">Dirección<br>2018</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2018</div>
+      <div class="film-body-col">
+        <h3><a href="yo-pasto.html" onclick="event.stopPropagation();" class="es-text">Yo pasto de los leones</a><a href="yo-pasto.html" onclick="event.stopPropagation();" class="en-text" style="display:none">I, lion's grass</a></h3>
+        <p class="film-specs">24 min · HD</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">Una joven actriz convoca a un casting para una película sobre la inundación en Santa Fe. Entre las voces de las personas, el presente, el pasado y su propia experiencia del paisaje, comienzan a surgir preguntas.</p>
+          <p class="film-synopsis en-text" style="display:none">A young actress holds a casting call for a film about the flood in Santa Fe. Among the voices of people, present, past, and her own experience of the landscape, questions begin to emerge.</p>
+          <div class="film-crew">
+            <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div>
+          </div>
+          <div style="margin-top:1rem;"><a href="https://vimeo.com/456237042" target="_blank" rel="noopener" style="font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">↗ <span class="es-text">Ver en Vimeo</span><span class="en-text" style="display:none">Watch on Vimeo</span></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-row" onclick="toggleFilm(this)">
+      <div class="film-year-col es-text">Videoinstalación<br>2018</div>
+      <div class="film-year-col en-text" style="display:none">Video Installation<br>2018</div>
+      <div class="film-body-col">
+        <h3><a href="https://vimeo.com/292882549" target="_blank" rel="noopener" onclick="event.stopPropagation();">Resolana nocturna</a></h3>
+        <p class="film-specs es-text">Galería Proyecto Fuga</p>
+        <p class="film-specs en-text" style="display:none">Galería Proyecto Fuga</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">Videoinstalación presentada en la Galería Proyecto Fuga.</p>
+          <p class="film-synopsis en-text" style="display:none">Video installation presented at Galería Proyecto Fuga.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-row" onclick="toggleFilm(this)">
+      <div class="film-year-col es-text">Dirección<br>2015</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2015</div>
+      <div class="film-body-col">
+        <h3><a href="https://vimeo.com/137779783" target="_blank" rel="noopener" onclick="event.stopPropagation();">Donde no hay nada</a></h3>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <div class="film-crew"><div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi Naput</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-row" onclick="toggleFilm(this)">
+      <div class="film-year-col es-text">Dirección<br>2011</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2011</div>
+      <div class="film-body-col">
+        <h3><a href="http://www.cinemargentino.com/films/914988605-lo-fi" target="_blank" rel="noopener" onclick="event.stopPropagation();">Lo-Fi</a></h3>
+        <p class="film-specs">10 min</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">¿Cómo suenan los viajes de entrecasa?</p>
+          <p class="film-synopsis en-text" style="display:none">What do in-between trips sound like?</p>
+          <div class="film-crew">
+            <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi</div>
+            <div class="crew-item"><span class="crew-role es-text">Fotografía</span><span class="crew-role en-text" style="display:none">Photography</span>Gonzalo Gatto</div>
+            <div class="crew-item"><span class="crew-role es-text">Producción</span><span class="crew-role en-text" style="display:none">Production</span>Ignacio Lillini</div>
+            <div class="crew-item"><span class="crew-role es-text">Arte</span><span class="crew-role en-text" style="display:none">Art</span>Betania Cappato</div>
+            <div class="crew-item"><span class="crew-role es-text">Sonido</span><span class="crew-role en-text" style="display:none">Sound</span>Federico Vitor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-row" onclick="toggleFilm(this)">
+      <div class="film-year-col es-text">Dirección<br>2010</div>
+      <div class="film-year-col en-text" style="display:none">Direction<br>2010</div>
+      <div class="film-body-col">
+        <h3><a href="http://www.cinemargentino.com/films/914988606-verano" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="es-text">Verano</a><a href="http://www.cinemargentino.com/films/914988606-verano" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="en-text" style="display:none">Summer</a></h3>
+        <p class="film-specs">14 min</p>
+        <span class="film-expand-btn es-text">+ ver ficha</span><span class="film-expand-btn en-text" style="display:none">+ details</span>
+        <div class="film-body">
+          <p class="film-synopsis es-text">Cinco jóvenes desafiantes se juntan en un patio cerrado. Del silencio que emana la siesta se desprenden los acordes de una banda de rock. Inmutables, tocan mientras el tiempo se desdobla y pierde la estabilidad del presente.</p>
+          <p class="film-synopsis en-text" style="display:none">Five defiant young people gather in an enclosed courtyard. From the silence of the siesta, the chords of a rock band emerge. Unmoving, they play while time unfolds and loses the stability of the present.</p>
+          <div class="film-crew">
+            <div class="crew-item"><span class="crew-role es-text">Dirección</span><span class="crew-role en-text" style="display:none">Direction</span>Milton Secchi</div>
+            <div class="crew-item"><span class="crew-role es-text">Fotografía</span><span class="crew-role en-text" style="display:none">Photography</span>Eduardo Crespo</div>
+            <div class="crew-item"><span class="crew-role es-text">Arte</span><span class="crew-role en-text" style="display:none">Art</span>Federico Lastra</div>
+            <div class="crew-item"><span class="crew-role es-text">Sonido</span><span class="crew-role en-text" style="display:none">Sound</span>Federico Vitor</div>
+          </div>
         </div>
       </div>
     </div>
@@ -842,21 +946,22 @@
     </div>
 
     <div class="prog-row">
-      <span class="prog-role-col es-text">Programador<br>2025</span><span class="prog-role-col en-text" style="display:none">Programmer<br>2025</span>
-      <div class="prog-body">
-        <h3 class="es-text">Temporada de Rescate — Cinemateca de Entre Ríos</h3>
-        <h3 class="en-text" style="display:none">Temporada de Rescate — Entre Ríos Cinematheque</h3>
-      </div>
-    </div>
-
-    <div class="prog-row">
       <span class="prog-role-col es-text">Programador<br>2024 — continúa</span>
       <span class="prog-role-col en-text" style="display:none">Programmer<br>2024 — ongoing</span>
       <div class="prog-body">
         <h3>FICER</h3>
-        <p class="es-text">Festival Internacional de Cine Experimental de Entre Ríos.</p>
-        <p class="en-text" style="display:none">International Independent Film Festival of Entre Ríos.</p>
+        <p class="es-text">Festival Internacional de Cine de Entre Ríos.</p>
+        <p class="en-text" style="display:none">Festival Internacional de Cine de Entre Ríos.</p>
         <a href="https://ficer.com.ar/" target="_blank">ficer.com.ar ↗</a>
+      </div>
+    </div>
+
+    <div class="prog-row">
+      <span class="prog-role-col es-text">Programador<br>2025</span><span class="prog-role-col en-text" style="display:none">Programmer<br>2025</span>
+      <div class="prog-body">
+        <h3 class="es-text">Temporada de Rescate — Cinemateca de Entre Ríos</h3>
+        <h3 class="en-text" style="display:none">Temporada de Rescate — Entre Ríos Cinematheque</h3>
+        <a href="https://www.instagram.com/cinemateca_er/" target="_blank" style="margin-top:0.5rem;">@cinemateca_er ↗</a>
       </div>
     </div>
 
@@ -920,8 +1025,8 @@
       <span class="prog-role-col es-text">Programador<br>2018</span><span class="prog-role-col en-text" style="display:none">Programmer<br>2018</span>
       <div class="prog-body">
         <h3 class="es-text">Encuentros de Cine</h3><h3 class="en-text" style="display:none">Cinema Encounters</h3>
-        <p class="es-text" style="margin-top:0.4rem">Serie de películas latinoamericanas con presencia de realizadores.</p>
-        <p class="en-text" style="display:none;margin-top:0.4rem">Latin american screening series with filmmakers in attendance.</p>
+        <p class="es-text" style="margin-top:0.4rem">Parte del equipo de programación de la serie de proyecciones de películas latinoamericanas con presencia de sus realizadorxs, entre quienes estuvieron Ana Poliak, Santiago Loza, Milagros Mumenthaler, Carolina Adriazola y José Luis Sepúlveda, entre otrxs, organizada por el Colectivo de Cineastas.</p>
+        <p class="en-text" style="display:none;margin-top:0.4rem">Part of the programming team for this latin american screening series with filmmakers in attendance, including Ana Poliak, Santiago Loza, Milagros Mumenthaler, Carolina Adriazola and José Luis Sepúlveda, among others. Organized by Colectivo de Cineastas.</p>
       </div>
     </div>
 
@@ -951,16 +1056,16 @@
       <span class="prog-role-col es-text">Charla<br>2023</span>
       <span class="prog-role-col en-text" style="display:none">Talk<br>2023</span>
       <div class="prog-body">
-        <h3 class="es-text">Charla y proyección — UC Santa Cruz</h3>
-        <h3 class="en-text" style="display:none">Talk and screening — UC Santa Cruz</h3>
+        <h3 class="es-text">Charla y proyección "Santa Fe - notas, 2017-2019" — UC Santa Cruz</h3>
+        <h3 class="en-text" style="display:none">Talk and screening "Santa Fe - notes, 2017-2019" — UC Santa Cruz</h3>
         <p class="es-text" style="margin-top:0.4rem">University of California, Santa Cruz, EEUU</p>
         <p class="en-text" style="display:none;margin-top:0.4rem">University of California, Santa Cruz, US</p>
       </div>
     </div>
 
     <div class="prog-row">
-      <span class="prog-role-col es-text">Charla<br>2017</span>
-      <span class="prog-role-col en-text" style="display:none">Talk<br>2017</span>
+      <span class="prog-role-col es-text">Charla<br>2023</span>
+      <span class="prog-role-col en-text" style="display:none">Talk<br>2023</span>
       <div class="prog-body">
         <h3 class="es-text">Charla — Bienal Arte Joven</h3>
         <h3 class="en-text" style="display:none">Talk — Young Art Biennial</h3>
@@ -970,11 +1075,11 @@
     </div>
 
     <div class="prog-row">
-      <span class="prog-role-col es-text">Seminario</span>
-      <span class="prog-role-col en-text" style="display:none">Seminar</span>
+      <span class="prog-role-col es-text">Seminario<br>2022</span>
+      <span class="prog-role-col en-text" style="display:none">Seminar<br>2022</span>
       <div class="prog-body">
-        <h3 class="es-text">Seminario — ISCAA Fernando Birri</h3>
-        <h3 class="en-text" style="display:none">Seminar — ISCAA Fernando Birri</h3>
+        <h3>"Distancia, paisaje, archivo"</h3>
+        <p style="margin-top:0.4rem">ISCAA Fernando Birri — Santa Fe</p>
       </div>
     </div>
 
@@ -982,7 +1087,7 @@
       <span class="prog-role-col es-text">Seminario<br>2021</span>
       <span class="prog-role-col en-text" style="display:none">Seminar<br>2021</span>
       <div class="prog-body">
-        <h3>"Distancia, paisaje, archivo"</h3>
+        <h3>"Rastro, paisaje, archivo"</h3>
         <p style="margin-top:0.4rem">PLAY — Festival de Videoarte y Cine Experimental</p>
       </div>
     </div>
